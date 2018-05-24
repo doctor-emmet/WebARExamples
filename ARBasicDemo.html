@@ -1,0 +1,42 @@
+<html>
+<head>
+    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+    <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+    <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.1/aframe/build/aframe-ar.js"></script>
+</head>
+    
+<body id="audio" onclick="playAudio()" style='margin : 0px; overflow: hidden;'>
+	
+  <a-scene embedded arjs rjs='trackingMethod: best;'>`
+  
+  
+  
+		  <a-assets>
+			<a-asset-item id="coin" src="https://cdn.rawgit.com/doctor-emmet/WebARExamples/master/BigBee3.gltf"></a-asset-item> 
+			<video id="vid" crossorigin autoplay="true" src="https://cdn.rawgit.com/doctor-emmet/WebARExamples/master/bee.mp4"></video>	
+		</a-assets>
+		  
+    <!-- handle marker with your own pattern -->
+   <!-- <a-marker-camera type='pattern' patternUrl="https://cdn.rawgit.com/doctor-emmet/WebARExamples/master/pattern-marker.patt">
+      <a-box position='0 0.5 0' material='color: red;'></a-box>
+    </a-marker-camera>
+	
+	<a-marker preset="hiro">
+	-->
+	
+
+    <!-- handle marker with hiro preset -->
+    <a-marker id="top" preset="hiro">
+	  <!--<a-marker id="top" preset='custom' type='pattern' patternURL='https://cdn.rawgit.com/doctor-emmet/WebARExamples/master/marker5.patt'> -->
+	  <a-entity>  <!-- Grandparent entity -->
+			<a-entity gltf-model="#coin" cursor-animator markerhandler rotation="0 0 0" scale="0.01 0.01 0.01" position="0 0.01 0"></a-entity>
+		</a-entity>
+    </a-marker>
+	
+    <!-- add a simple camera -->
+	<a-entity id="camera" camera look-controls cursor="rayOrigin: mouse"></a-entity>
+  </a-scene>
+
+
+</body>
+</html>
