@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!-- include aframe -->   
+<script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+<script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.1/aframe/build/aframe-ar.js"></script>
+
+<body style='margin : 0px; overflow: hidden; font-family: Monospace;'><div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
+</div>
+
+	<a-assets>
+		<a-asset-item id="coin" src="https://cdn.rawgit.com/doctor-emmet/WebARExamples/master/BigBee3.gltf"></a-asset-item> 
+	</a-assets>
+
+	<!-- enable artoolkit on this scene -->
+	<a-scene stats embedded arjs='sourceType: webcam; detectionMode: mono; maxDetectionRate: 30; canvasWidth: 240; canvasHeight: 180'>
+
+		<!-- define the object which gonna be put on this marker  -->
+		<a-entity gltf-model="#coin" cursor-animator markerhandler rotation="0 0 0" scale="0.05 0.05 0.05" position="0 0 0"></a-entity>
+		</a-entity>
+
+		<a-marker-camera preset='hiro'></a-marker-camera>
+	</a-scene>
+</body>
+</html>
