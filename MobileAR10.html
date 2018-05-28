@@ -17,23 +17,25 @@
 	<a-assets>
 		<a-asset-item id="coin" src="https://cdn.rawgit.com/doctor-emmet/WebARExamples/master/BigBee3.gltf"></a-asset-item> 
 		<video id="vid" crossorigin src="https://cdn.rawgit.com/doctor-emmet/WebARExamples/master/bee.mp4"></video>	
+		 <img id="text" crossorigin src="https://cdn.rawgit.com/doctor-emmet/WebARExamples/master/ee.png">
 	</a-assets>
 	
 
 	<a-marker-camera preset='hiro'>
 			<a-entity>  <!-- Grandparent entity -->
 				<a-animation
-					begin="30000"
+					begin="10000"
 					attribute="rotation"
 					easing="linear"
 					dur="600"
-					to="0 180 0"
-					repeat="0">
+					to="0 360 0"
+					repeat="10">
 				</a-animation> 
 
 				<!-- define the object which gonna be put on this marker  -->
-				<a-entity gltf-model="#coin" cursor-animator rotation="0 0 0" scale="0.05 0.05 0.05" position="0 0 0"></a-entity>
-				<a-video src="#vid" cursor-animator width="0.2" height="0.2" position="0 0 -0.1"></a-video>
+				<a-entity gltf-model="#coin" rotation="0 0 0" scale="0.05 0.05 0.05" position="0 0 0"></a-entity>
+				<a-video src="#vid" width="0.2" height="0.2" position="0 0.05 -0.1"></a-video>
+				<a-plane src="#text" width="0.2" height="0.2" position="0 0.05 0.1" rotation="0 0 0"></a-plane>
 			</a-entity>
 
 		</a-marker-camera>
